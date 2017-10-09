@@ -21,7 +21,12 @@
 /******/ 		while(resolves.length) {
 /******/ 			resolves.shift()();
 /******/ 		}
-/******/
+/******/ 		if(executeModules) {
+/******/ 			for(i=0; i < executeModules.length; i++) {
+/******/ 				result = __webpack_require__(__webpack_require__.s = executeModules[i]);
+/******/ 			}
+/******/ 		}
+/******/ 		return result;
 /******/ 	};
 /******/
 /******/ 	// The module cache
@@ -29,7 +34,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		1: 0
+/******/ 		2: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -86,7 +91,7 @@
 /******/ 		if (__webpack_require__.nc) {
 /******/ 			script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 		}
-/******/ 		script.src = __webpack_require__.p + "" + ({"0":"lodash"}[chunkId]||chunkId) + ".bundle.js";
+/******/ 		script.src = __webpack_require__.p + "" + chunkId + ".bundle.js";
 /******/ 		var timeout = setTimeout(onScriptComplete, 120000);
 /******/ 		script.onerror = script.onload = onScriptComplete;
 /******/ 		function onScriptComplete() {
@@ -140,25 +145,6 @@
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-async function getComponent() {
-    var element = document.createElement('div');
-    const _ = await __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 1));
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    return element;
-}
-
-getComponent().then(component => {
-    document.body.appendChild(component);
-})
-
-/***/ })
-/******/ ]);
+/******/ ([]);
