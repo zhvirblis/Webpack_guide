@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "webpack guide tasks",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "start": "webpack-dev-server --open --config webpack.config.js",
+    "build": "webpack --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
