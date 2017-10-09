@@ -15,6 +15,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       title: 'Caching'
     }),
+    new webpack.HashedModuleIdsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
     }),
