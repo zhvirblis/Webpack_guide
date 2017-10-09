@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/zhvirblis/Webpack_guide#readme",
   "devDependencies": {
+    "@types/lodash": "^4.14.77",
     "imports-loader": "^0.7.1",
     "lodash": "^4.17.4",
     "ts-loader": "^2.3.7",
