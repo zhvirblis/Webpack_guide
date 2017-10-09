@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: './src/polyfills.js',
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {
@@ -18,5 +19,5 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
-    },
+    }
 };
