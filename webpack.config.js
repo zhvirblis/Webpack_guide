@@ -1,16 +1,18 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
+    publicPath: './assets',
     path: path.resolve(__dirname, 'dist')
   },
-  module: {
-    rules:[{
-        test: /\.json$/,
-        use: [
-          'file-loader'
-        ]
-      }]
-  }
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      title: 'Output Management'
+    })
+  ],
 };
