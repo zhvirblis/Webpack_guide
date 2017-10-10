@@ -1,10 +1,6 @@
 import _ from 'lodash';
-let context = require.context('./test', false, /\.test.json$/);
-var obj = {};
-context.keys().forEach(function(key){
-    obj[key] = context(key);
-});
-console.log(obj);
+let a = require.context('../test', false, /hi.test.js$/);
+console.log(a);
 
 function component() {
     var element = document.createElement('div');
